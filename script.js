@@ -1,0 +1,61 @@
+const btn1 = document.querySelector('#btn1');
+const btns1 = document.querySelector('#btn2');
+const btn1close = document.querySelector('.btn2');
+const btn2close = document.querySelector('#btnsu');
+const modal1 = document.querySelector('.modal1');
+const modal2 = document.querySelector('.modal2');
+
+btn1.addEventListener('click', () => {
+  modal1.classList.add('block');
+  modal1.showModal();
+}); // click
+
+btn1close.addEventListener('click', () => {
+  modal1.classList.remove('block');
+  modal1.close();
+});
+
+btns1.addEventListener('click', () => {
+  modal2.classList.add('block');
+  modal2.showModal();
+}); // click
+
+btn2close.addEventListener('click', () => {
+  modal2.classList.remove('block');
+  modal2.close();
+});
+
+
+
+window.addEventListener('DOMContentLoaded', () => {
+  window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    header.classList.toggle('sticky', window.scrollY > 0)
+  });
+
+  const scr = document.querySelector('.scroll-top');
+
+  window.addEventListener('scroll', () => {
+    scr.classList.toggle('active', window.scrollY > 100)
+  });
+  scr.addEventListener('click', () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  });
+
+  window.addEventListener('scroll', () => {
+    let reveals = document.querySelectorAll('.reveal');
+
+    for (let i = 0; i < reveals.length; i++) {
+      let windowHeight = window.innerHeight;
+      let revealTop = reveals[i].getBoundingClientRect().top;
+      let revealPoint = 50;
+
+      if (revealTop < windowHeight - revealPoint) {
+        reveals[i].classList.add('active');
+      }
+    }
+  });
+});
+
+
