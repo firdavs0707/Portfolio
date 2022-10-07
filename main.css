@@ -644,7 +644,9 @@ section {
   }
 
   header.sticky {
-    padding: 12px 0px;
+    width: 800px;
+    padding: 0;
+    margin-left: -150px;
   }
 
   .main .content h2 {
