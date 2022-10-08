@@ -301,9 +301,18 @@ section {
   background: #0c73b8;
 }
 
+.skills-opinion {
+  font-size: 23px;
+}
+
 .skills .javascript::before {
   width: 80%;
   background: #e3a324;
+}
+
+.skills .cpp::before {
+  width: 75%;
+  background: #1395ff;
 }
 
 .skills .react::before {
