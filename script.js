@@ -1,9 +1,12 @@
 const btn1 = document.querySelector('#btn1');
 const btns1 = document.querySelector('#btn2');
+const btn2 = document.querySelector('.btn-skill');
 const btn1close = document.querySelector('.btn2');
 const btn2close = document.querySelector('#btnsu');
+const btn3close = document.querySelector('#btnsuz');
 const modal1 = document.querySelector('.modal1');
 const modal2 = document.querySelector('.modal2');
+const modal3 = document.querySelector('.modal3');
 
 btn1.addEventListener('click', () => {
   modal1.classList.add('block');
@@ -13,6 +16,16 @@ btn1.addEventListener('click', () => {
 btn1close.addEventListener('click', () => {
   modal1.classList.remove('block');
   modal1.close();
+});
+
+btn2.addEventListener('click', () => {
+  modal3.classList.add('block');
+  modal3.showModal();
+});
+
+btn3close.addEventListener('click', () => {
+  modal3.classList.remove('block');
+  modal3.close();
 });
 
 btns1.addEventListener('click', () => {

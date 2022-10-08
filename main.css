@@ -120,7 +120,7 @@ section {
 .btn {
   color: #fff;
   background: crimson;
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 600;
   display: inline-block;
   padding: 10px 20px;
@@ -336,17 +336,30 @@ section {
   background: rgba(0, 0, 0, 0.5);
 }
 
+.modal3::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
 .modal1 {
   width: 600px;
-  height: 300px;
+  height: 400px;
   border: 2px solid #ccc;
   border-radius: 10px;
   margin-top: 300px;
   padding: 10px 30px;
-  background: linear-gradient(to left, #FED546 0% 30%, #346C9B 70% 100);
 }
 
 .modal2 {
+  width: 600px;
+  height: 400px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  margin-top: 200px;
+  padding: 10px 30px;
+}
+
+.modal3 {
   width: 600px;
   height: 400px;
   border: 2px solid #ccc;
@@ -370,6 +383,12 @@ section {
 }
 
 .modal2 div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal3 div {
   display: flex;
   justify-content: space-between;
   align-items: center;
