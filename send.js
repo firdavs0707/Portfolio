@@ -18,13 +18,17 @@ var ready = function() {
 
 function time () {
     var dateTime = new Date();
+    var year = dateTime.getFullYear(); 
+    var month = (dateTime.getMonth() + 1);
+    var day = dateTime.getDate();
     var hour = dateTime.getHours();
     var min = dateTime.getMinutes();
+    var sec = dateTime.getSeconds();
     
-    return hour.toString() + ':' +min.toString();
+
+    return (day.toString() + '.' + month.toString() + '.' + year.toString() +' soat ' + hour.toString() + ':' + min.toString() + ':'+ sec.toString());
 }
 
-console.log(time());
 
 var sendtelegram = function() {
     ready();
@@ -39,12 +43,12 @@ var sendtelegram = function() {
         },
         "data": JSON.stringify({
             "chat_id": chat_id,
-            "text": 'Firdavs sizga soat' + time() + 'portfolio saytingizdan ' + u_name + " habar qoldirdi!" + '\n\n' + message
+            "text": 'Firdavs sizga ' + time() + ' da portfolio saytingizdan ' + u_name + " habar qoldirdi!" + '\n\n' + message
         })
     };
     $.ajax(settings).done(function(response) {
         console.log(response);
-    });
+    }); 
     const modmes = document.querySelector('.modmes');
     modmes.showModal();
     const modmesclose = document.querySelector('#modmes-close');
