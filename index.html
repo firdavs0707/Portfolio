@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -61,7 +62,7 @@
       <div class="animated-text">
         <h3>Oquvchi</h3>
         <h3>Web Developer</h3>
-        <h3>Blogger</h3>
+        <h3>Youtuber</h3>
       </div>
       <a class="btn" id="btn1">Mening Ishlarim</a>
       <div class="media-icons">
@@ -151,7 +152,7 @@
   <section class="services" id="services">
     <div class="title reveal">
       <div class="section-title">Hizmatlarim</div>
-      <p style="text-align: center;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas ipsa libero porro alias saepe incidunt error et voluptatibus sequi. Consequatur natus nisi sed tempore eveniet aperiam deserunt doloribus, dignissimos libero?</p>
+      <p style="text-align: center;">Hizmatlarim hozircha bepul agar buyurtma bermoqchi bolsangiz <a class="link-kontakt" href="#contact">contact</a> ga otib aloqaga chiqing</p>
     </div>
     <div class="content">
       <div class="card reveal">
@@ -160,7 +161,7 @@
         </div>
         <div class="info">
           <h3>Web Design</h3>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate id sed quibusdam neque numquam quasi consequuntur incidunt explicabo illum.</p>
+          <p>Saytni verstka qilishdan oldin saytni dazayni bolishi kerak ana usha dizaynga buyurtma berish uchun <a class="link-kontakt" href="#contact">contact</a>ga otib biz bilan aloqaga chiqing</p>
         </div>
       </div>
       <div class="card reveal">
@@ -169,7 +170,7 @@
         </div>
         <div class="info">
           <h3>Web Developing</h3>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate id sed quibusdam neque numquam quasi consequuntur incidunt explicabo illum.</p>
+          <p>Har - hil saytlarga buyurtmalar ham olamiz agar buyurtma bermoqchi bolsangiz <a class="link-kontakt" href="#contact">contact</a>ga otim biz bilan aloqaga chiqing</p>
         </div>
       </div>
       <div class="card reveal">
@@ -178,11 +179,11 @@
         </div>
         <div class="info">
           <h3>Youtuber  </h3>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate id sed quibusdam neque numquam quasi consequuntur incidunt explicabo illum.</p>
+          <p>Youtub ga video va reklamalar joylash kerak bolsa <a class="link-kontakt" href="#contact">contact</a>ga otib aloqaga chiqing. va biz videolaringizni youyub ga qoyib beramiz. Kutamiz</p>
         </div>
       </div>
       <div class="title reveal">
-        <a href="#" class="btn">See More</a>
+        <a href="https://my.gov.uz/oz/all-services" target="_blank" class="btn">See More</a>
       </div>
     </div>
   </section>
@@ -223,7 +224,7 @@
         </div>
       </div>
       <div class="title reveal">
-        <a href="#" class="btn">See All</a>
+        <a href="https://codepen.io/" target="_blank" class="btn">See All</a>
       </div>
     </div>
   </section>
@@ -260,7 +261,7 @@
           </div>
           <div class="info">
             <h3>Email Address</h3>
-            <span>firdavs0.4.2.0.0.7@gmail.com</span>
+            <span>firdavsfayozov58@gmail.com</span>
           </div>
         </div>
 
@@ -275,24 +276,47 @@
         </div>
       </div>
       <div class="row">
-        <div class="contact-form reveal">
-          <h3>Habar Yuboring</h3>
-          <div class="input-box">
-            <input type="text" placeholder="Ismingiz">
-          </div>
-          <div class="input-box">
-            <input type="text" placeholder="Email">
-          </div>
-          <div class="input-box">
-            <textarea cols="33" rows="8" placeholder="Habaringiz"></textarea>
-          </div>
-          <div class="input-box">
-            <input type="submit" class="send-btn" value="Jonatmoq" placeholder="Email">
-          </div>
-        </div>
+        <div class="form">
+          <form onsubmit=" return sendtelegram()" class="contact-form reveal">
+              <div class="input-box">
+                <input type="text" name="name" id="name" placeholder="Ismingiz" required>
+              </div>
+              <div class="input-box">
+                <input type="email" name="email" id="email" placeholder="Email manzilingiz" required>
+              </div>
+              <div class="input-box2" style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+                <div style="display: flex; width: 130px; justify-content: space-between; align-items: center;">
+                  <p class="tel-start" value="+998" style="font-size: 20px;">+998</p>
+                  <select class="select3" id="telcodi">
+                    <option value="90">90</option>
+                    <option value="90">93</option>
+                    <option value="90">94</option>
+                    <option value="90">95</option>
+                    <option value="90">97</option>
+                    <option value="90">98</option>
+                    <option value="90">99</option>
+                  </select>
+                </div>
+                <input class="tel-body" type="num" name="tel" id="tel" placeholder="Tel raqamingiz">
+              </div>
+              <div class="input-box">
+                <select name="davlatdan" class="select" id="coun">
+                  <option value="uzb" selected hidden>Davlatingizni tanlang</option>
+                </select>
+              </div>
+              <div class="input-box">
+                <textarea name="message" id="message" cols="30" rows="8" placeholder="Izoh qoldiring" required></textarea>
+              </div>
+              <div class="input-box">
+                <input type="submit" value="Yuborish" class="send-btn" id="btn">
+              </div>
+          </form>
+      </div>
       </div>
     </div>
   </section>
+
+  <div class="errors"></div>
 
   <footer class="footer">
     <span class="footer-title">Firdavs Fayozov</span>
@@ -366,7 +390,7 @@
       <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong> va <strong>React</strong>ni esa <u>Najot Talim</u> ning standart kursida organganman u yerda kurs 5-oy davom etadi va har oy imyohon olinadi agar imtihondan 70% dan kam ball olsangiz keyingi oyga ota olmaysiz va bu juda yomon, chunki hozirda <u>Najot Talim</u>da faqat bir oquvchiga Stipendiya berilmoqda. Lekin agar shu oquvchi imtijonlarning biridan yeqilsa stipendiya berish tohtatiladi. Stipendiya oluvchi oquvchi har 6-oy da o'quv bolimi tomonidan bergilaniladi. 
     </p>
   </dialog>
-
+  <script src="./send.js"></script>
   <script src="./script.js"></script>
 </body>
 </html>

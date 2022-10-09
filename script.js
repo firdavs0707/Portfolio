@@ -71,4 +71,31 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+let arr = [];
+let sorted;
+const select = document.querySelector('.select');
 
+const showMovie = async title => {
+  try {
+    let response = await fetch (`https://restcountries.com/v3.1/all`)
+    let data = await response.json();
+    data.forEach(element => {
+      arr.push(element.name.common);
+      sorted = arr.sort()
+    });
+    sorted.forEach(element => {
+      let option = document.createElement('option');
+      option.value = element;
+      option.textContent = element;
+      select.appendChild(option);
+    });
+  } catch (err) {
+  }
+}
+
+showMovie()
+
+
+
+
+      
