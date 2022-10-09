@@ -362,6 +362,10 @@ section {
   background: rgba(0, 0, 0, 0.5);
 }
 
+.modmes::backdrop {
+  background: rgba(0, 0, 0, 0.3);
+}
+
 .modal1 {
   width: 600px;
   height: 400px;
@@ -369,6 +373,15 @@ section {
   border-radius: 10px;
   margin-top: 300px;
   padding: 10px 30px;
+}
+
+.modmes {
+  width: 600px;
+  height: 130px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 10px 30px;
+  margin-left: auto;
 }
 
 .modal2 {
@@ -411,6 +424,12 @@ section {
 }
 
 .modal3 div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modmes div {
   display: flex;
   justify-content: space-between;
   align-items: center;

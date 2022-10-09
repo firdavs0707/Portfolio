@@ -6,15 +6,25 @@ var telegram_bot_id = "5652103664:AAHTWDIBuqnMN1lT1lPsMMeUL8o0QU1qpHI"; // token
 var chat_id = 1191155807; // 1111'ni o'rniga habar borishi kerak bo'lgan joyni ID'sini yozing (Batafsil videoda)
 var u_name, email, coun, tel, tel2, tel3, message;
 var ready = function() {
-  u_name = document.getElementById("name").value;
-  email = document.getElementById("email").value;
-  coun = document.getElementById("coun").value;
-  tel = document.getElementById("telcodi").value;
-  tel2 = document.getElementById("telli").value;
-  tel3 = '+998' + tel + tel2;
-  message = document.getElementById("message").value;
-  message = "Ismi: " + u_name + "\nEmail: " + email + "\nDavlat: " + coun + "\nTelefon raqami: " + tel3 + "\nXabar: " + message;
+    u_name = document.getElementById("name").value;
+    email = document.getElementById("email").value;
+    coun = document.getElementById("coun").value;
+    tel = document.getElementById("telcodi").value;
+    tel2 = document.getElementById("telli").value;
+    tel3 = '+998' + tel + tel2;
+    message = document.getElementById("message").value;
+    message = "Ismi: " + u_name + "\nEmail: " + email + "\nDavlat: " + coun + "\nTelefon raqami: " + tel3 + "\nXabar: " + message;
 };
+
+function time () {
+    var dateTime = new Date();
+    var hour = dateTime.getHours();
+    var min = dateTime.getMinutes();
+    
+    return hour.toString() + ':' +min.toString();
+}
+
+console.log(time());
 
 var sendtelegram = function() {
     ready();
@@ -29,14 +39,21 @@ var sendtelegram = function() {
         },
         "data": JSON.stringify({
             "chat_id": chat_id,
-            "text": 'Firdavs portfolio saytingizdan sizga ' + u_name + " habar qoldirdi!" + '\n' + message
+            "text": 'Firdavs sizga soat' + time() + 'portfolio saytingizdan ' + u_name + " habar qoldirdi!" + '\n\n' + message
         })
     };
     $.ajax(settings).done(function(response) {
         console.log(response);
     });
+    const modmes = document.querySelector('.modmes');
+    modmes.showModal();
+    const modmesclose = document.querySelector('#modmes-close');
+    modmesclose.addEventListener('click', function() {
+        modmes.close();
+    }); 
     document.getElementById("name").value = "";
     document.getElementById("email").value = "";
     document.getElementById("message").value = "";
+    document.getElementById("telli").value = "";
     return false;
 };
