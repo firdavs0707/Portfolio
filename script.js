@@ -94,7 +94,61 @@ const showMovie = async title => {
 }
 
 showMovie()
+let knopka = document.querySelector('#menu__toggle');
+let item1 = document.querySelector('#menu__item1');
+let item2 = document.querySelector('#menu__item2');
+let item3 = document.querySelector('#menu__item3');
+let item4 = document.querySelector('#menu__item4');
+let item5 = document.querySelector('#menu__item5');
+let item6 = document.querySelector('#menu__item6');
+let menuMenu = document.querySelector('.menu-menu');
 
+item1.addEventListener('click', () => {
+  menuMenu.classList.add('clozz');
+  knopka.checked = false;
+  knopka.addEventListener('click', () => {
+    menuMenu.classList.remove('clozz');
+  });
+});
 
+item2.addEventListener('click', () => {
+  menuMenu.classList.add('clozz');
+  knopka.checked = false;
+  knopka.addEventListener('click', () => {
+    menuMenu.classList.remove('clozz');
+  });
+});
+
+item3.addEventListener('click', () => {
+  menuMenu.classList.add('clozz');
+  knopka.checked = false;
+  knopka.addEventListener('click', () => {
+    menuMenu.classList.remove('clozz');
+  });
+});
+
+item4.addEventListener('click', () => {
+  menuMenu.classList.add('clozz');
+  knopka.checked = false;
+  knopka.addEventListener('click', () => {
+    menuMenu.classList.remove('clozz');
+  });
+});
+
+item5.addEventListener('click', () => {
+  menuMenu.classList.add('clozz');
+  knopka.checked = false;
+  knopka.addEventListener('click', () => {
+    menuMenu.classList.remove('clozz');
+  });
+});
+
+item6.addEventListener('click', () => {
+  menuMenu.classList.add('clozz');
+  knopka.checked = false;
+  knopka.addEventListener('click', () => {
+    menuMenu.classList.remove('clozz');
+  });
+});
 
       
