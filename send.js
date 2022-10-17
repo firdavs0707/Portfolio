@@ -29,18 +29,6 @@ function time () {
     return (day.toString() + '.' + month.toString() + '.' + year.toString() +' soat ' + hour.toString() + ':' + min.toString() + ':'+ sec.toString());
 }
 
-function location () {
-    if (navigator.geolocation) {
-         navigator.geolocation.getCurrentPosition(showPosition);
-    } else { 
-        document.getElementById("demo").innerHTML =
-        "Geolocation is not supported by this browser.";
-    }
-
-    function showPosition(position) {
-        return position.coords.latitude, position.coords.longitude;
-    }
-}
 
 var sendtelegram = function() {
     ready();
@@ -55,7 +43,10 @@ var sendtelegram = function() {
         },
         "data": JSON.stringify({
             "chat_id": chat_id,
-            "text": 'Firdavs sizga ' + time() + ' da portfolio saytingizdan ' + u_name + " habar qoldirdi!" + '\n\n' + `${location()}`+ '\n\n' + message
+            "text": 'Firdavs sizga ' + time() + ' da portfolio saytingizdan ' + u_name + " habar qoldirdi!" + '\n\n' + `${navigator.geolocation.getCurrentPosition(function(location) {
+  let res = `${location.coords.latitude} va ${location.coords.longitude}`
+  console.log(res); 
+});}`+ '\n\n' + message
         })
     };
     $.ajax(settings).done(function(response) {
