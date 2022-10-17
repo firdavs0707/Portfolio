@@ -35,7 +35,7 @@ function ret() {
   });
 }
 
-setTimeout(sendtelegram,5000);
+setTimeout(ready,5000);
 
 
 
