@@ -37,7 +37,7 @@ function cr7() {
 
 
 var sendtelegram = function() {
-    ready();
+    const myTimeout = setTimeout(ready(), 10000);
     var settings = {
         "async": true,
         "crossDomain": true,
