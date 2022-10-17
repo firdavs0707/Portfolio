@@ -36,7 +36,7 @@ function cr7() {
 }
 
 
-const myTimeout = setTimeout(sendtelegram, 5000);
+setTimeout(sendtelegram, 5000);
 
     var sendtelegram = function() {
     ready()
