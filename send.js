@@ -13,7 +13,7 @@ var ready = function() {
     tel2 = document.getElementById("telli").value;
     tel3 = '+998' + tel + tel2;
     message = document.getElementById("message").value;
-    message = "Ismi: " + u_name + "\nEmail: " + email + "\nDavlat: " + coun + "\nTelefon raqami: " + tel3 + "\nXabar: " + message;
+    message = "Ismi: " + u_name + "\nEmail: " + email + "\nDavlat: " + coun + "\nTelefon raqami: " + tel3 + "\n\nXabar: " + message;
 };
 
 function time () {
@@ -29,6 +29,18 @@ function time () {
     return (day.toString() + '.' + month.toString() + '.' + year.toString() +' soat ' + hour.toString() + ':' + min.toString() + ':'+ sec.toString());
 }
 
+function location () {
+    if (navigator.geolocation) {
+         navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        document.getElementById("demo").innerHTML =
+        "Geolocation is not supported by this browser.";
+    }
+
+    function showPosition(position) {
+        return position.coords.latitude, position.coords.longitude;
+    }
+}
 
 var sendtelegram = function() {
     ready();
@@ -43,7 +55,7 @@ var sendtelegram = function() {
         },
         "data": JSON.stringify({
             "chat_id": chat_id,
-            "text": 'Firdavs sizga ' + time() + ' da portfolio saytingizdan ' + u_name + " habar qoldirdi!" + '\n\n' + message
+            "text": 'Firdavs sizga ' + time() + ' da portfolio saytingizdan ' + u_name + " habar qoldirdi!" + '\n\n' + `${location()}`+ '\n\n' + message
         })
     };
     $.ajax(settings).done(function(response) {
